@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   # 設定後台路由，運用 Namespace 這個方法
   namespace :admin do
+  	resources :posts
   	root "posts#index"
   end
 
