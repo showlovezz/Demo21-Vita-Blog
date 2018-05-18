@@ -2,6 +2,7 @@ class Admin::PostsController < ApplicationController
 
 	# 在後台登入做驗證是否為管理者
 	before_action :authenticate_admin
+	before_action :find_post, only: [:show, :edit, :update]
 
 	def index
 		@posts = Post.all
@@ -23,15 +24,12 @@ class Admin::PostsController < ApplicationController
 	end
 
 	def show
-		@post = Post.find(params[:id])
 	end
 
 	def edit
-		@post = Post.find(params[:id])
 	end
 
 	def update
-		@post = Post.find(params[:id])
 		if @post.update(post_params)
 			flash[:notice] = "The Post was successfully updated"
 			redirect_to admin_post_path(@post)
@@ -45,6 +43,10 @@ class Admin::PostsController < ApplicationController
 
 	def post_params
 		params.require(:post).permit(:title, :content)
+	end
+
+	def find_post
+		@post = Post.find(params[:id])
 	end
 
 end
