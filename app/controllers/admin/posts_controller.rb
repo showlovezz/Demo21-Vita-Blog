@@ -2,7 +2,7 @@ class Admin::PostsController < ApplicationController
 
 	# 在後台登入做驗證是否為管理者
 	before_action :authenticate_admin
-	before_action :find_post, only: [:show, :edit, :update]
+	before_action :find_post, only: [:show, :edit, :update, :destroy]
 
 	def index
 		@posts = Post.all
@@ -37,6 +37,12 @@ class Admin::PostsController < ApplicationController
 			flash.now[:alert] = "The Post was failed to update"
 			render 'edit'
 		end
+	end
+
+	def destroy
+		@post.destroy
+		redirect_to admin_posts_path
+		flash[:alert] = "The Post was deleted"
 	end
 
 	private
