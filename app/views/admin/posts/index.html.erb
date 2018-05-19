@@ -1,14 +1,34 @@
-<h1>這是文章後台喔 !!!</h1>
+<div class="container">
+	<div class="row">
+		
+		<div class="col-md-2">
+			<!-- 製作成表單，待處理 -->
+			<%= link_to 'Create New Post' , new_admin_post_path, class: "btn btn-outline-warning" %>
+		</div>
 
-<ul>
-	<% @posts.each do |post| %>
-		<li>
-			<%= post.title %>
-			<%= post.content %>
-			<%= link_to 'Show', admin_post_path(post) %>
-			<%= link_to 'Edit', edit_admin_post_path(post) %>
-			<%= link_to 'Delete', admin_post_path(post), method: :delete, data: { confirm: "Are you sure ?"} %>
-		</li>
-	<% end %>
-</ul>
-<%= link_to 'Create New Post', new_admin_post_path %>
+		<div class="col-md-10">
+			<table class="table table-hover">
+				<thead class="thead-dark">
+					<tr>
+						<th scope="col">#</th>
+						<th scope="col">Title</th>
+						<th scope="col">Content</th>
+						<th scope="col">Edit</th>
+						<th scope="col">Delete</th>
+					</tr>
+				</thead>
+				<tbody>
+					<% @posts.each do |post| %>
+						<tr>
+							<th scope="row"><%= post.id %></th>
+							<td><%= link_to post.title, admin_post_path(post) %></td>
+							<td><%= post.content %></td>
+							<td><%= link_to 'Edit', edit_admin_post_path(post) %></td>
+							<td><%= link_to 'Delete', admin_post_path(post), method: :delete, data: { confirm: "Are you sure ?"} %></td>
+						</tr>
+					<% end %>	
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
