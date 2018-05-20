@@ -14,6 +14,12 @@
 	font-size: 16px;
 }
 
+//設定 new 與 edit 頁面裡的 span 與 h4 並排
 .form-group span,h4 {
 	display: inline-block;
+}
+
+//設定 show 頁面 p 的字體大小
+.ft-size p {
+	font-size: 24px;
 }
