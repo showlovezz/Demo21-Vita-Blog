@@ -1,14 +1,12 @@
 //定義 jumbotron 背景顏色及字體顏色
 .jumbotron {
 	color: white;
+	height: 220px;
 }
 
 //以下是定義 jumbotron 字型及字體大小
 .jumbotron h1, p {
 	font-family: 微軟正黑體;
-}
-.jumbotron h1 {
-	font-size: 50px;
 }
 .jumbotron p {
 	font-size: 16px;
