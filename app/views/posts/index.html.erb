@@ -1,7 +1,22 @@
-<h1>文章前台</h1>
+<div class="container">
+	<div class="row">
+	
+		<% @posts.each do |post| %>
+			<div class="col-md-4">
+				<div class="card-deck mb-4">
+					<div class="card" style="height: 400px;">
+						<h5 class="card-header"><%= post.title %></h5>
+						<div class="card-body">
+							<p class="card-text"><%= truncate(post.content, length: 180) %></p>
+						</div>
+						<div class="card-footer">
+							<small class="text-muted"><%= post.created_at %></small>
+						</div>
+					</div>
+				</div>
+			</div>
+		<% end %>
 
-<h1>文章前台</h1>
+	</div>
+</div>
 
-<h1>文章前台</h1>
-
-<h1>文章前台</h1>
