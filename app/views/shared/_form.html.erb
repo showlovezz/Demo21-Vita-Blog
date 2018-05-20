@@ -1,0 +1,19 @@
+<%= form_for [:admin, @post] do |f| %>
+	
+	<div class="form-group">
+	    <h4><%= f.label :title, "文章標題：" %></h4>
+      <span class="badge badge-pill badge-danger">必填</span>
+	    <%= f.text_field :title, class: "form-control form-control-lg", placeholder: "請輸入文章標題" %>
+  	</div>
+
+	<div class="form-group">
+    	<h4><%= f.label :content, "文章內容：" %></h4>
+      <span class="badge badge-pill badge-danger">必填</span>
+    	<%= f.text_area :content, class: "form-control", rows: "22", placeholder: "請輸入文章內容" %>
+  	</div>
+
+  	<div class="form-group">
+  		<%= f.submit class: "btn btn-outline-success btn-lg pull-right mg-bot" %>
+  	</div>
+	
+<% end %>
