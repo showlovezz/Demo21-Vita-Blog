@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="row">
+    
+    <div class="col-md-12 ft-size">
+      <h1><%= @post.title %></h1>
+      <hr>
+      <p><%= simple_format @post.content %></p>
+      <%= link_to '回上一頁', posts_path, class: "btn btn-secondary btn-lg btn-block" %>
+    </div>
+
+  </div>
+</div>

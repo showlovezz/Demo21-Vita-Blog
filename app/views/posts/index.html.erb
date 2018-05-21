@@ -7,7 +7,10 @@
 					<div class="card" style="height: 400px;">
 						<h5 class="card-header"><%= post.title %></h5>
 						<div class="card-body">
-							<p class="card-text"><%= truncate(post.content, length: 180) %></p>
+							<p class="card-text">
+								<%= truncate(post.content, length: 180) %>
+								<%= link_to '讀更多', post_path(post), class: "badge badge-primary" %>
+							</p>
 						</div>
 						<div class="card-footer">
 							<small class="text-muted"><%= time_ago_in_words(post.created_at) %> ago</small>
@@ -19,4 +22,3 @@
 
 	</div>
 </div>
-

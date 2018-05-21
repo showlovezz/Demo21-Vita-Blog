@@ -9,7 +9,7 @@
     		<div class="container">
     			<h1><%= @post.title %></h1>
     			<hr>
-				<p class="text-secondary text-justify"><%= @post.content %></p>
+				<p class="text-secondary text-justify"><%= simple_format @post.content %></p>
 			</div>
 		</div>
 

@@ -19,12 +19,17 @@
 	display: inline-block;
 }
 
-//設定 show 頁面 p 的字體大小
+//設定 admin/show 頁面 p 的字體大小
 .ft-size p {
-	font-size: 24px;
+	font-size: 20px;
 }
 
 //設定整個 body 的背景顏色
 body {
 	background-color: #FFFAFA;
+}
+
+//設定 public/show 頁面 p 的字體大小
+.ft-size p {
+	font-size: 20px;
 }
