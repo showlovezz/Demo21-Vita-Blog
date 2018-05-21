@@ -1,6 +1,6 @@
 class Admin::PortfoliosController < ApplicationController
 
-	before_action :find_portfolio, only: [:show]
+	before_action :find_portfolio, only: [:show, :edit]
 
 	def index
 		@portfolios = Portfolio.all
@@ -22,6 +22,9 @@ class Admin::PortfoliosController < ApplicationController
 	end
 
 	def show
+	end
+
+	def edit
 	end
 
 	private
