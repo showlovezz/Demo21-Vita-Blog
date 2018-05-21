@@ -1,0 +1,26 @@
+<%= form_for [:admin, @portfolio] do |f| %>
+	
+	<div class="form-group">
+		<h4><%= f.label :title, "作品名稱：" %></h4>
+		<span class="badge badge-pill badge-danger">必填</span>
+		<%= f.text_field :title, class: "form-control form-control-lg", placeholder: "請輸入作品名稱" %>
+	</div>
+
+	<div class="form-group">
+		<h4><%= f.label :content, "作品敘述：" %></h4>
+		<span class="badge badge-pill badge-danger">必填</span>
+		<%= f.text_area :content, class: "form-control", rows: "10", placeholder: "請輸入作品敘述" %>
+	</div>
+
+	<div class="form-group">
+		<h4><%= f.label :image, "作品照片：" %></h4>
+		<span class="badge badge-pill badge-danger">必填</span>
+		<%= image_tag @portfolio.image, width: "300px" if @portfolio.image? %>
+		<div><%= f.file_field :image %></div>
+	</div>
+
+	<div class="form-group">
+		<%= f.submit class: "btn btn-outline-success btn-lg pull-right" %>
+	</div>
+
+<% end %>
