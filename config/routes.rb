@@ -7,10 +7,12 @@ Rails.application.routes.draw do
 
   # 設定前台路由
   resources :posts, only: [:index, :show]
+  resources :portfolios, only: [:index, :show]
 
   # 設定後台路由，運用 Namespace 這個方法
   namespace :admin do
   	resources :posts
+    resources :portfolios
   	root "posts#index"
   end
 
