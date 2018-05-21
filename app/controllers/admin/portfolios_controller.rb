@@ -1,5 +1,7 @@
 class Admin::PortfoliosController < ApplicationController
 
+	before_action :find_portfolio, only: [:show]
+
 	def index
 		@portfolios = Portfolio.all
 	end
@@ -19,10 +21,17 @@ class Admin::PortfoliosController < ApplicationController
 		end
 	end
 
+	def show
+	end
+
 	private
 
 	def portfolio_params
 		params.require(:portfolio).permit(:title, :content, :image)
+	end
+
+	def find_portfolio
+		@portfolio = Portfolio.find(params[:id])
 	end
 	
 end
