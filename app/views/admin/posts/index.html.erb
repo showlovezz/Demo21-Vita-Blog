@@ -9,14 +9,7 @@
 			<!-- <p class="notice"><%= notice %></p>
 			<p class="alert"><%= alert %></p> -->
 			<h5>
-				<% if current_user %>
-					Hi, <%= current_user.email %>
-					<%= link_to '登出', destroy_user_session_path, method: :delete, class: "btn btn-light mt-0" %>
-					<%= link_to '修改密碼', edit_user_registration_path, class: "btn btn-light mt-0" %>
-				<% else %>
-					<%= link_to '註冊', new_user_registration_path %>
-					<%= link_to '登入', new_user_session_path %>
-				<% end %>
+				<%= render "shared/inout" %>
 			</h5>
 			<hr style="border:1px dotted red" />
 
@@ -48,5 +41,6 @@
 				</tbody>
 			</table>
 		</div>
+	
 	</div>
 </div>

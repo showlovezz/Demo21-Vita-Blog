@@ -1,5 +1,46 @@
-<h1>portfolios 後台</h1>
+<div class="container-fluid">
+	<div class="row">
+		
+		<div class="col-sm-2 col-md-2 col-lg-2 col-xl-1">
+			<%= render "shared/btn" %>
+		</div>
 
-<h1>portfolios 後台</h1>
+		<div class="col-sm-10 col-md-10 col-lg-10 col-xl-11">
+			<h5>
+				<%= render "shared/inout" %>
+			</h5>
+			<hr style="border:1px dotted red" />
 
-<h1>portfolios 後台</h1>
+			<table class="table table-hover">
+				<thead class="thead-dark">
+					<tr>
+						<th scope="col">#</th>
+						<th scope="col">Title</th>
+						<th scope="col">Edit</th>
+						<th scope="col">Delete</th>
+					</tr>
+				</thead>
+				<tbody>
+					<% @portfolios.each do |portfolio| %>
+						<tr>
+							<th scope="row"><%= portfolio.id %></th>
+							<td><%= link_to portfolio.title, admin_portfolio_path(portfolio) %></td>
+							<td>
+								<%= link_to edit_admin_portfolio_path(portfolio) do %>
+									<i class="fas fa-pencil-alt"></i>
+								<% end %>
+							</td>
+							<td><%= link_to admin_portfolio_path(portfolio), method: :delete, data: { confirm: "Are you sure ?"} do %>
+									<i class="fab fa-expeditedssl"></i>
+								<% end %>
+							</td>
+						</tr>
+					<% end %>	
+				</tbody>
+			</table>
+		</div>
+
+	</div>
+</div>
+
+
