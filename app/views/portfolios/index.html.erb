@@ -1,5 +1,24 @@
-<h1>portfolios</h1>
+<div class="container">
+	<div class="row">
+		
+		<% @portfolios.each do |portfolio| %>
+			<div class="col-md-4">
+				<div class="card-deck mb-4">
+					<div class="card" style="height: 450px;">
+						<%= image_tag portfolio.image, class: "card-img-top" %>
+						<div class="card-body">
+							<h5 class="card-title"><%= portfolio.title %></h5>
+							<p class="card-text"><%= truncate(portfolio.content, length: 180) %>
+								<%= link_to '讀更多', portfolio_path(portfolio), class: "badge badge-primary" %>
+							</p>
+						</div>
+						<div class="card-footer">
+							<small class="text-muted"><%= time_ago_in_words(portfolio.created_at) %> ago</small>
+						</div>
+					</div>
+				</div>
+			</div>
+		<% end %>
 
-<h1>portfolios</h1>
-
-<h1>portfolios</h1>
+	</div>
+</div>
