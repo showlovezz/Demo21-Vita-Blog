@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row">
+    
+    <div class="col-md-4">
+    	<%= image_tag @portfolio.image, class: "img-thumbnail" %>
+    </div>
+    <div class="col-md-8">
+    	<h1><%= @portfolio.title %></h1>
+      	<hr>
+      	<p><%= simple_format @portfolio.content %></p>
+    </div>
+    <div class="col-md-12">
+     	<%= link_to '回上一頁', portfolios_path, class: "btn btn-secondary btn-lg btn-block pull-bottom" %>
+    </div>
+
+  </div>
+</div>
